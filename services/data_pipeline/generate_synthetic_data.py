@@ -373,12 +373,13 @@ def apply_capacity_constraints(enrollment: float, capacity: int) -> tuple[int, i
     else:
         # Enrollment below capacity
         enrollment_count = max(1, int(enrollment))
+        # If hits_capacity is False, we should NOT trigger a waitlist,
+        # even if enrollment_count exceeds capacity due to noise.
+        # Just cap the enrollment to capacity, but waitlist_count stays 0.
         if enrollment_count > capacity:
             enrollment_count = capacity
-            waitlist_count = random.randint(1, int(capacity * 0.2))
-        else:
-            waitlist_count = 0
-    
+        waitlist_count = 0
+
     return (enrollment_count, waitlist_count)
 
 
@@ -396,12 +397,12 @@ def generate_realistic_enrollment(course: Dict[str, Any], term: Dict[str, Any],
         Tuple of (enrollment_count, waitlist_count)
     """
     course_id = course['course_id']
-    # This line counts how many previous enrollment values exist for this course in historical_data.
-    # It's used as a "term index" to track which number term is being generated for this course.
-    # For example, if 3 enrollment values already exist, this will be 3 and the new value will be the 4th.
     term_index = len([t for t in historical_data.get(course_id, [])])
     
     # Base enrollment from typical range
+    # random.uniform(a, b) generates a random float N such that a <= N <= b.
+    # In this context, "base enrollment" means the initial, before-trends-or-noise estimate for how many students would typically enroll in a section of this course in this term.
+    # It's calculated by choosing a random value between the course's typical min and max enrollment bounds, giving a range of likely section enrollments.
     base_enrollment = random.uniform(
         course['typical_enrollment_min'],
         course['typical_enrollment_max']
@@ -409,13 +410,16 @@ def generate_realistic_enrollment(course: Dict[str, Any], term: Dict[str, Any],
     
     # Determine trend type: 30% upward, 20% downward, 50% stable
     trend_roll = random.random()
+    # We simulate different enrollment trends over time:
+    # - 'upward': Enrollment increases over terms (30% chance)
+    # - 'downward': Enrollment decreases over terms (20% chance)
+    # - 'stable': Enrollment stays about the same (50% chance)
     if trend_roll < 0.3:
         trend_type = 'upward'
     elif trend_roll < 0.5:
         trend_type = 'downward'
     else:
         trend_type = 'stable'
-    
     # Apply trend
     enrollment = apply_trend(base_enrollment, term_index, trend_type)
     
@@ -458,7 +462,9 @@ def generate_enrollments(sections: List[Dict[str, Any]], terms: List[Dict[str, A
     historical_data = {}
     
     # Create course lookup
+    # Create a dictionary that maps each course_id to its course dictionary for fast lookup.
     course_lookup = {c['course_id']: c for c in courses}
+    # Create a dictionary that maps each term_id to its term dictionary for fast lookup.
     term_lookup = {t['term_id']: t for t in terms}
     
     for section in sections:
@@ -507,9 +513,14 @@ def write_csv(data: List[Dict[str, Any]], filename: str, fieldnames: List[str]) 
     
     filepath = os.path.join('data/sample', filename)
     
+    # The 'with' statement is used to open the file and ensure it is automatically closed after the indented block completes,
+    # even if an error occurs. It provides a context manager for safe file handling.
     with open(filepath, 'w', newline='') as csvfile:
+        # Create a CSV writer object that will write dictionaries to the CSV file using the specified field names as columns
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        # Write the header row to the CSV file (column names)
         writer.writeheader()
+        # Write all records from the data list as rows in the CSV file
         writer.writerows(data)
     
     print(f"Generated {filepath} with {len(data)} records")
