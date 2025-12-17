@@ -27,11 +27,15 @@ from services.data_pipeline.generate_synthetic_data import (
 )
 
 
+# This line marks the following function as a pytest fixture, which can be used to provide setup/teardown or shared resources for test functions.
+# A decorator in Python (the @ symbol) modifies the behavior of the function below it.
+# @pytest.fixture marks this function as a "fixture", 
+# which is a reusable setup function for providing test data or resources to test functions.
 @pytest.fixture
 def seed_random():
     """Fixture to seed random for deterministic tests."""
     random.seed(42)
-    yield
+    yield  # Pauses here to run the test, then continues after the test (teardown) completes
     random.seed(None)
 
 
@@ -45,10 +49,11 @@ def sample_config():
         'num_courses': 20
     }
 
-
+#pytest automatically looks for functions and classes with "test" and instantiates them as a case
+#classes are optional but good for organization and readability
 class TestTermGeneration:
     """Tests for term generation."""
-    
+    #fixture is used to provide the test data (like random seed)
     def test_generate_terms_count(self, seed_random, sample_config):
         """Test that correct number of terms are generated."""
         terms = generate_terms(sample_config['start_year'], sample_config['end_year'])
@@ -261,6 +266,12 @@ class TestPatterns:
         assert fall_avg > spring_avg, \
             f"Fall average ({fall_avg}) should be higher than Spring average ({spring_avg})"
     
+    # This decorator uses pytest's parametrize feature to run the test_seasonality_direction
+    # test twice: once with ("Fall", True) and once with ("Spring", False). For "Fall", 
+    # the test expects the seasonality effect to increase the base value 
+    # (expected_higher=True), and for "Spring" it expects it to decrease 
+    # (expected_higher=False). This checks that the seasonality adjustment 
+    # is applied in the correct direction depending on the semester.
     @pytest.mark.parametrize("semester,expected_higher", [
         ('Fall', True),
         ('Spring', False),
