@@ -1,0 +1,10 @@
+# Development dependencies for CoursePulse
+# Install with: pip install -r requirements-dev.txt
+
+# Testing framework
+pytest>=7.4.0
+
+# Optional: for better test output
+pytest-cov>=4.1.0  # Coverage reporting
+pytest-xdist>=3.3.0  # Parallel test execution
+
