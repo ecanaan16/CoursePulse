@@ -2,6 +2,10 @@
 Report generation for synthetic data pipeline runs.
 
 Generates metrics and validation reports, writes to reports/latest.json.
+
+validates actual generated data compared to unit test that vs pytest validates code functions on a greater data size
+pytests essentially never writes to csv files, data is only in memory
+essentially ensures data quality while pytest checks code bugs
 """
 import json
 import csv
@@ -290,6 +294,21 @@ def main():
     runtime = 0.0
     
     # Try to read from command line args if provided
+    # This part allows you to override the default input values by providing arguments when you run this script from the command line. 
+    # For example, if you run:
+    #     python services/data_pipeline/report_run.py data/sample 42 18 200 0.0
+    # then:
+    #   data_dir        = "data/sample"
+    #   seed            = 42
+    #   num_departments = 18
+    #   num_courses     = 200
+    #   runtime         = 0.0
+    # If you just run `python services/data_pipeline/report_run.py` with no extra arguments, defaults are used.
+    # 
+    # In the CI file (.github/workflows/ci.yml), this override is triggered automatically in the validation step with:
+    #   python services/data_pipeline/report_run.py data/sample 42 18 200 0.0
+    # So, you can run it manually from the command line in the same way, or let CI handle it.
+
     if len(sys.argv) > 1:
         data_dir = sys.argv[1]
     if len(sys.argv) > 2:
