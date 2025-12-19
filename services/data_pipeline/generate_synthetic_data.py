@@ -12,6 +12,7 @@ It is also used to generate data for **training and testing machine learning mod
 import csv
 import random
 import os
+import time
 from datetime import datetime, timedelta
 from typing import List, Dict, Any #allows for type hinting
 
@@ -532,8 +533,11 @@ def main():
     Orchestrate generation with seeded random for determinism.
     """
     # Set seed for reproducible results
+    seed = 42
+    random.seed(seed)
     
-    random.seed(42)
+    # Track runtime
+    start_time = time.time()
     
     # Configuration
     #constant information
@@ -579,11 +583,36 @@ def main():
               ['section_id', 'term_id', 'enrollment_count', 'waitlist_count', 
                'enrollment_date'])
     
+    # Calculate runtime
+    runtime_seconds = time.time() - start_time
+    
     print("\n✅ Synthetic data generation complete!")
     print(f"   - {len(terms)} terms")
     print(f"   - {len(courses)} courses")
     print(f"   - {len(sections)} sections")
     print(f"   - {len(enrollments)} enrollments")
+    print(f"   - Runtime: {runtime_seconds:.3f} seconds")
+    
+    # Generate and save report
+    print("\nGenerating report...")
+    # Import report functions (works when run as script)
+    import sys
+    import os
+    report_dir = os.path.dirname(os.path.abspath(__file__))
+    if report_dir not in sys.path:
+        sys.path.insert(0, report_dir)
+    from report_run import generate_report, write_report, print_report
+    
+    report = generate_report(
+        data_dir='data/sample',
+        seed=seed,
+        num_departments=num_departments,
+        num_courses=num_courses,
+        runtime_seconds=runtime_seconds
+    )
+    report_path = write_report(report)
+    print_report(report)
+    print(f"\n📄 Report saved to: {report_path}")
 
 
 if __name__ == '__main__':

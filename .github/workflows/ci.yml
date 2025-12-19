@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  test-and-validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements-dev.txt
+    
+    - name: Run pytest
+      run: |
+        pytest tests/ -v
+    
+    - name: Generate synthetic data (medium scale)
+      run: |
+        python services/data_pipeline/generate_synthetic_data.py
+    
+    - name: Validate generated data
+      run: |
+        python services/data_pipeline/report_run.py data/sample 42 18 200 0.0
+    
+    - name: Check validation pass rate
+      run: |
+        python services/data_pipeline/validate_report.py
+    
+    - name: Upload reports artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: data-generation-report
+        path: |
+          reports/latest.json
+          data/sample/*.csv
+        retention-days: 7
+

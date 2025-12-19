@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "generated_at": "2025-12-18T19:19:41.831861",
+    "seed": 42,
+    "scale": {
+      "departments": 18,
+      "courses": 200
+    }
+  },
+  "counts": {
+    "terms": 10,
+    "courses": 200,
+    "sections": 1747,
+    "enrollments": 1747
+  },
+  "runtime": {
+    "seconds": 0.0
+  },
+  "validation": {
+    "violations": 0,
+    "total_rows_checked": 3704,
+    "pass_rate_percent": 100.0
+  },
+  "enrollment_stats": {
+    "enrollment": {
+      "min": 10,
+      "median": 39,
+      "max": 154
+    },
+    "waitlist": {
+      "min": 0,
+      "median": 0,
+      "max": 41
+    }
+  }
+}
