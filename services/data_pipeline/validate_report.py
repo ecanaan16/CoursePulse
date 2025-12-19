@@ -16,6 +16,9 @@ def main():
         print(f"❌ Report file not found: {report_path}")
         sys.exit(1)
     
+    # Yes, exactly! In report_run.py, the report dictionary is converted to JSON and saved as a file.
+    # Here, we open that JSON file and use json.load to convert it BACK into a Python dictionary.
+    # This allows us to access all the values and fields that were originally created in report_run.py.
     with open(report_path, 'r') as f:
         report = json.load(f)
     
