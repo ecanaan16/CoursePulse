@@ -24,7 +24,8 @@ jobs:
       with:
         python-version: '3.11'
         cache: 'pip'
-      # Sets up Python 3.11 and enables pip caching for faster installs
+        cache-dependency-path: 'requirements-dev.txt'
+      # Sets up Python 3.11 and enables pip caching for faster installs using requirements-dev.txt
 
     - name: Install dependencies
       run: |
