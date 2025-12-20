@@ -1,14 +1,14 @@
 
-# This is a GitHub Actions workflow for running continuous integration (CI) on pushes and pull requests targeting the main, master, or develop branches.
+# This is a GitHub Actions workflow for running continuous integration (CI) on pushes and pull requests targeting the main, master, develop, or phase-1-data branches.
 # Here's what each section and step is doing:
 
 name: CI  # Name of the workflow
 
 on:  # Triggers for the workflow
   push:
-    branches: [ main, master, develop ]  # Runs when committing to these branches
+    branches: [ main, master, develop, phase-1-data ]  # Runs when committing to these branches
   pull_request:
-    branches: [ main, master, develop ]  # Runs on PRs targeting these branches
+    branches: [ main, master, develop, phase-1-data ]  # Runs on PRs targeting these branches
 
 jobs:
   test-and-validate:  # Name of the main job
