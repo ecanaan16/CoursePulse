@@ -1,46 +1,57 @@
-name: CI
 
-on:
+# This is a GitHub Actions workflow for running continuous integration (CI) on pushes and pull requests targeting the main, master, or develop branches.
+# Here's what each section and step is doing:
+
+name: CI  # Name of the workflow
+
+on:  # Triggers for the workflow
   push:
-    branches: [ main, master, develop ]
+    branches: [ main, master, develop ]  # Runs when committing to these branches
   pull_request:
-    branches: [ main, master, develop ]
+    branches: [ main, master, develop ]  # Runs on PRs targeting these branches
 
 jobs:
-  test-and-validate:
-    runs-on: ubuntu-latest
+  test-and-validate:  # Name of the main job
+    runs-on: ubuntu-latest  # Runs on the latest stable Ubuntu runner
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    
+      # Checks out the repository contents to the runner
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
         cache: 'pip'
-    
+      # Sets up Python 3.11 and enables pip caching for faster installs
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements-dev.txt
-    
+      # Upgrades pip and installs development dependencies specified in requirements-dev.txt
+
     - name: Run pytest
       run: |
         pytest tests/ -v
-    
+      # Runs the test suite (pytest) on the tests/ directory, outputs verbose logs
+
     - name: Generate synthetic data (medium scale)
       run: |
         python services/data_pipeline/generate_synthetic_data.py
-    
+      # Runs your data pipeline script to generate synthetic data
+
     - name: Validate generated data
       run: |
         python services/data_pipeline/report_run.py data/sample 42 18 200 0.0
-    
+      # Runs a validation/reporting script on the generated sample data with given arguments
+
     - name: Check validation pass rate
       run: |
         python services/data_pipeline/validate_report.py
-    
+      # Checks that the data validation results meet required standards
+
     - name: Upload reports artifact
       if: always()
       uses: actions/upload-artifact@v4
@@ -50,4 +61,5 @@ jobs:
           reports/latest.json
           data/sample/*.csv
         retention-days: 7
+      # Always uploads generated reports and CSV files as build artifacts, keeping them 7 days
 
