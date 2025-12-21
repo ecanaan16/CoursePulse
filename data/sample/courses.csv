@@ -1,0 +1,201 @@
+course_id,department,course_number,title,credits,level,prerequisites,max_capacity,typical_enrollment_min,typical_enrollment_max
+1,CS,112,Special Topics in Computer,3,Undergraduate,,124,74,117
+2,CS,479,Advanced Topics in Computer,2,Undergraduate,,33,19,31
+3,CS,219,Topics in Computer,3,Undergraduate,,121,72,114
+4,CS,379,Fundamentals of Computer,3,Undergraduate,,133,79,126
+5,CS,694,Advanced Research Methods in Computer,3,Graduate,,65,39,61
+6,CS,490,Advanced Principles of Computer,2,Undergraduate,,75,45,71
+7,CS,654,Advanced Principles of Computer,3,Graduate,,98,58,93
+8,CS,293,Introduction to Computer,3,Undergraduate,,109,65,103
+9,CS,592,Advanced Topics in Computer,3,Graduate,CS438,59,35,56
+10,CS,520,Advanced Research Methods in Computer,3,Graduate,CS242,88,52,83
+11,CS,286,Advanced Computer,3,Undergraduate,CS168,119,71,113
+12,CS,465,Advanced Introduction to Computer,3,Mixed,CS225,50,30,47
+13,CS,238,Special Topics in Computer,3,Undergraduate,CS183,137,82,130
+14,MATH,514,Advanced Advanced Mathematics,3,Graduate,,81,48,76
+15,MATH,208,Topics in Mathematics,3,Undergraduate,,113,67,107
+16,MATH,429,Advanced Fundamentals of Mathematics,2,Undergraduate,MATH387,98,58,93
+17,MATH,399,Fundamentals of Mathematics,3,Undergraduate,,58,34,55
+18,MATH,335,Topics in Mathematics,3,Mixed,,140,84,133
+19,MATH,421,Advanced Advanced Mathematics,3,Undergraduate,,38,22,36
+20,MATH,405,Advanced Fundamentals of Mathematics,3,Undergraduate,,140,84,133
+21,MATH,474,Advanced Special Topics in Mathematics,2,Mixed,,126,75,119
+22,MATH,428,Advanced Principles of Mathematics,2,Undergraduate,,88,52,83
+23,MATH,469,Advanced Special Topics in Mathematics,3,Undergraduate,,52,31,49
+24,MATH,154,Research Methods in Mathematics,3,Undergraduate,,94,56,89
+25,ENGL,178,History of English,3,Undergraduate,,39,15,35
+26,ENGL,300,Advanced Studies in English,3,Mixed,ENGL192,40,16,36
+27,ENGL,129,Survey of English,3,Undergraduate,,17,6,15
+28,ENGL,517,Advanced Readings in English,3,Graduate,ENGL437,30,12,27
+29,ENGL,342,History of English,3,Mixed,,21,8,18
+30,ENGL,493,Advanced Seminar in English,3,Mixed,,27,10,24
+31,ENGL,466,Advanced History of English,3,Mixed,,18,7,16
+32,ENGL,132,History of English,1,Undergraduate,,33,13,29
+33,ENGL,136,Seminar in English,3,Undergraduate,,16,6,14
+34,ENGL,518,Advanced Advanced Studies in English,3,Graduate,,21,8,18
+35,ENGL,470,Advanced Advanced Studies in English,3,Undergraduate,ENGL342,40,16,36
+36,HIST,148,Introduction to History,3,Undergraduate,,28,11,25
+37,HIST,473,Advanced Introduction to History,3,Undergraduate,,18,7,16
+38,HIST,472,Advanced History of History,3,Undergraduate,HIST198,21,8,18
+39,HIST,171,Topics in History,3,Undergraduate,,17,6,15
+40,HIST,381,Introduction to History,2,Undergraduate,,15,6,13
+41,HIST,492,Advanced Readings in History,3,Mixed,,30,12,27
+42,HIST,305,Introduction to History,3,Undergraduate,HIST199,23,9,20
+43,HIST,416,Advanced History of History,3,Mixed,,40,16,36
+44,HIST,467,Advanced Topics in History,3,Undergraduate,HIST129,33,13,29
+45,HIST,515,Advanced Seminar in History,3,Graduate,HIST344,31,12,27
+46,HIST,435,Advanced Survey of History,2,Mixed,,20,8,18
+47,BIOL,134,Special Topics in Biology,3,Undergraduate,,150,90,142
+48,BIOL,563,Advanced Topics in Biology,3,Graduate,,83,49,78
+49,BIOL,389,Topics in Biology,3,Undergraduate,BIOL260,60,36,57
+50,BIOL,167,Special Topics in Biology,3,Undergraduate,,148,88,140
+51,BIOL,518,Advanced Introduction to Biology,3,Graduate,,42,25,39
+52,BIOL,209,Topics in Biology,3,Undergraduate,,142,85,134
+53,BIOL,225,Principles of Biology,3,Undergraduate,,99,59,94
+54,BIOL,656,Advanced Research Methods in Biology,3,Graduate,BIOL406,149,89,141
+55,BIOL,168,Principles of Biology,2,Undergraduate,,100,60,95
+56,BIOL,244,Topics in Biology,3,Undergraduate,,117,70,111
+57,BIOL,235,Topics in Biology,3,Undergraduate,,138,82,131
+58,CHEM,424,Advanced Fundamentals of Chemistry,3,Undergraduate,CHEM270,128,76,121
+59,CHEM,234,Advanced Chemistry,3,Undergraduate,,84,50,79
+60,CHEM,157,Introduction to Chemistry,4,Undergraduate,,49,29,46
+61,CHEM,289,Topics in Chemistry,3,Undergraduate,,35,21,33
+62,CHEM,120,Principles of Chemistry,3,Undergraduate,,43,25,40
+63,CHEM,386,Research Methods in Chemistry,3,Undergraduate,,49,29,46
+64,CHEM,360,Research Methods in Chemistry,3,Mixed,,52,31,49
+65,CHEM,506,Advanced Advanced Chemistry,3,Graduate,,149,89,141
+66,CHEM,442,Advanced Research Methods in Chemistry,3,Undergraduate,CHEM181,130,78,123
+67,CHEM,597,Advanced Research Methods in Chemistry,1,Graduate,,55,33,52
+68,CHEM,617,Advanced Principles of Chemistry,3,Graduate,,59,35,56
+69,PHYS,437,Advanced Advanced Physics,3,Undergraduate,PHYS135,128,76,121
+70,PHYS,428,Advanced Topics in Physics,3,Undergraduate,,98,58,93
+71,PHYS,114,Introduction to Physics,3,Undergraduate,,104,62,98
+72,PHYS,367,Introduction to Physics,2,Mixed,,123,73,116
+73,PHYS,611,Advanced Topics in Physics,4,Graduate,PHYS560,103,61,97
+74,PHYS,122,Special Topics in Physics,3,Undergraduate,,133,79,126
+75,PHYS,468,Advanced Special Topics in Physics,3,Undergraduate,PHYS320,38,22,36
+76,PHYS,384,Topics in Physics,3,Mixed,,122,73,115
+77,PHYS,429,Advanced Principles of Physics,3,Mixed,,119,71,113
+78,PHYS,165,Advanced Physics,3,Undergraduate,,116,69,110
+79,PHYS,544,Advanced Topics in Physics,3,Graduate,,136,81,129
+80,PSYC,246,Principles of Psychology,3,Undergraduate,,40,20,36
+81,PSYC,326,Research Methods in Psychology,3,Undergraduate,,30,15,27
+82,PSYC,245,Advanced Psychology,3,Undergraduate,,25,12,22
+83,PSYC,692,Advanced Principles of Psychology,3,Graduate,PSYC303,29,14,26
+84,PSYC,225,Topics in Psychology,3,Undergraduate,,49,24,44
+85,PSYC,422,Advanced Advanced Psychology,3,Undergraduate,,51,25,45
+86,PSYC,175,Research Methods in Psychology,3,Undergraduate,,26,13,23
+87,PSYC,556,Advanced Principles of Psychology,3,Graduate,,49,24,44
+88,PSYC,227,Seminar in Psychology,2,Undergraduate,PSYC159,53,26,47
+89,PSYC,452,Advanced Survey of Psychology,4,Mixed,,59,29,53
+90,PSYC,629,Advanced Topics in Psychology,3,Graduate,,30,15,27
+91,ECON,621,Advanced Topics in Economics,3,Graduate,ECON383,53,26,47
+92,ECON,222,Survey of Economics,3,Undergraduate,,35,17,31
+93,ECON,263,Advanced Economics,2,Undergraduate,ECON198,29,14,26
+94,ECON,516,Advanced Topics in Economics,3,Graduate,,46,23,41
+95,ECON,315,Topics in Economics,4,Undergraduate,,21,10,18
+96,ECON,695,Advanced Advanced Economics,3,Graduate,ECON460,39,19,35
+97,ECON,607,Advanced Advanced Economics,3,Graduate,,58,29,52
+98,ECON,624,Advanced Principles of Economics,3,Graduate,,44,22,39
+99,ECON,447,Advanced Seminar in Economics,3,Undergraduate,ECON339,28,14,25
+100,ECON,436,Advanced Introduction to Economics,4,Mixed,,21,10,18
+101,ECON,319,Principles of Economics,3,Undergraduate,ECON166,44,22,39
+102,PHIL,332,History of Philosophy,3,Undergraduate,,23,9,20
+103,PHIL,607,Advanced History of Philosophy,3,Graduate,,38,15,34
+104,PHIL,279,Survey of Philosophy,3,Undergraduate,,35,14,31
+105,PHIL,115,Survey of Philosophy,3,Undergraduate,,19,7,17
+106,PHIL,342,Seminar in Philosophy,2,Undergraduate,,29,11,26
+107,PHIL,492,Advanced History of Philosophy,3,Undergraduate,,38,15,34
+108,PHIL,699,Advanced Readings in Philosophy,3,Graduate,,33,13,29
+109,PHIL,259,Advanced Studies in Philosophy,3,Undergraduate,,27,10,24
+110,PHIL,350,Introduction to Philosophy,3,Mixed,,22,8,19
+111,PHIL,495,Advanced History of Philosophy,3,Undergraduate,,18,7,16
+112,PHIL,644,Advanced Readings in Philosophy,1,Graduate,,36,14,32
+113,ART,359,Seminar in Art,3,Undergraduate,,30,12,27
+114,ART,285,Seminar in Art,3,Undergraduate,,19,7,17
+115,ART,475,Advanced Advanced Studies in Art,4,Undergraduate,ART375,39,15,35
+116,ART,323,Readings in Art,3,Undergraduate,ART318,22,8,19
+117,ART,522,Advanced History of Art,3,Graduate,ART337,33,13,29
+118,ART,294,History of Art,1,Undergraduate,,20,8,18
+119,ART,281,Readings in Art,3,Undergraduate,ART252,37,14,33
+120,ART,642,Advanced Introduction to Art,3,Graduate,ART347,38,15,34
+121,ART,384,Readings in Art,3,Undergraduate,,37,14,33
+122,ART,108,Introduction to Art,3,Undergraduate,,22,8,19
+123,ART,397,History of Art,3,Undergraduate,,28,11,25
+124,MUS,440,Advanced History of Music,3,Mixed,,24,9,21
+125,MUS,161,Seminar in Music,3,Undergraduate,,32,12,28
+126,MUS,476,Advanced Survey of Music,3,Mixed,,23,9,20
+127,MUS,694,Advanced Advanced Studies in Music,3,Graduate,,21,8,18
+128,MUS,284,Survey of Music,3,Undergraduate,,19,7,17
+129,MUS,127,Advanced Studies in Music,3,Undergraduate,,35,14,31
+130,MUS,625,Advanced Introduction to Music,3,Graduate,,30,12,27
+131,MUS,274,Survey of Music,4,Undergraduate,MUS222,18,7,16
+132,MUS,602,Advanced Topics in Music,2,Graduate,,16,6,14
+133,MUS,388,History of Music,2,Undergraduate,MUS385,39,15,35
+134,MUS,405,Advanced Readings in Music,3,Undergraduate,,27,10,24
+135,POL,326,Survey of Political Science,3,Undergraduate,,39,19,35
+136,POL,130,Advanced Political Science,4,Undergraduate,,33,16,29
+137,POL,235,Research Methods in Political Science,2,Undergraduate,POL119,30,15,27
+138,POL,330,Research Methods in Political Science,3,Undergraduate,POL159,38,19,34
+139,POL,679,Advanced Seminar in Political Science,3,Graduate,,36,18,32
+140,POL,660,Advanced Advanced Political Science,3,Graduate,,47,23,42
+141,POL,215,Research Methods in Political Science,2,Undergraduate,POL118,24,12,21
+142,POL,257,Advanced Political Science,3,Undergraduate,,38,19,34
+143,POL,339,Research Methods in Political Science,3,Undergraduate,,37,18,33
+144,POL,352,Topics in Political Science,2,Undergraduate,POL210,40,20,36
+145,POL,113,Introduction to Political Science,3,Undergraduate,,56,28,50
+146,SOC,110,Seminar in Sociology,3,Undergraduate,,22,11,19
+147,SOC,544,Advanced Topics in Sociology,3,Graduate,,37,18,33
+148,SOC,399,Topics in Sociology,3,Undergraduate,,25,12,22
+149,SOC,309,Survey of Sociology,3,Undergraduate,SOC141,41,20,36
+150,SOC,353,Survey of Sociology,3,Undergraduate,,55,27,49
+151,SOC,145,Survey of Sociology,3,Undergraduate,,45,22,40
+152,SOC,500,Advanced Research Methods in Sociology,3,Graduate,,23,11,20
+153,SOC,285,Advanced Sociology,3,Undergraduate,,23,11,20
+154,SOC,381,Principles of Sociology,4,Undergraduate,,51,25,45
+155,SOC,422,Advanced Advanced Sociology,3,Undergraduate,,39,19,35
+156,SOC,382,Topics in Sociology,2,Undergraduate,,27,13,24
+157,BUS,160,Research Methods in Business,3,Undergraduate,,38,19,34
+158,BUS,239,Topics in Business,3,Undergraduate,,35,17,31
+159,BUS,174,Topics in Business,3,Undergraduate,,28,14,25
+160,BUS,570,Advanced Seminar in Business,3,Graduate,,52,26,46
+161,BUS,101,Survey of Business,3,Undergraduate,,57,28,51
+162,BUS,425,Advanced Seminar in Business,2,Mixed,,42,21,37
+163,BUS,490,Advanced Advanced Business,3,Undergraduate,,32,16,28
+164,BUS,361,Advanced Business,3,Mixed,,46,23,41
+165,BUS,481,Advanced Topics in Business,3,Undergraduate,,44,22,39
+166,BUS,466,Advanced Principles of Business,3,Mixed,BUS357,57,28,51
+167,BUS,151,Seminar in Business,3,Undergraduate,,49,24,44
+168,ENG,173,Fundamentals of Engineering,3,Undergraduate,,39,23,37
+169,ENG,235,Principles of Engineering,3,Undergraduate,,40,24,38
+170,ENG,672,Advanced Research Methods in Engineering,3,Graduate,,110,66,104
+171,ENG,694,Advanced Fundamentals of Engineering,3,Graduate,ENG170,60,36,57
+172,ENG,247,Advanced Engineering,3,Undergraduate,,42,25,39
+173,ENG,680,Advanced Research Methods in Engineering,2,Graduate,ENG406,145,87,137
+174,ENG,266,Research Methods in Engineering,2,Undergraduate,,85,51,80
+175,ENG,371,Fundamentals of Engineering,3,Undergraduate,,51,30,48
+176,ENG,412,Advanced Research Methods in Engineering,3,Undergraduate,,93,55,88
+177,ENG,336,Advanced Engineering,3,Mixed,ENG165,115,69,109
+178,ENG,338,Principles of Engineering,3,Undergraduate,ENG213,150,90,142
+179,EDU,400,Advanced Survey of Education,3,Undergraduate,,36,18,32
+180,EDU,254,Principles of Education,4,Undergraduate,,26,13,23
+181,EDU,392,Survey of Education,3,Undergraduate,,38,19,34
+182,EDU,437,Advanced Topics in Education,3,Undergraduate,,23,11,20
+183,EDU,490,Advanced Topics in Education,3,Mixed,,34,17,30
+184,EDU,280,Principles of Education,3,Undergraduate,,28,14,25
+185,EDU,421,Advanced Research Methods in Education,1,Undergraduate,,22,11,19
+186,EDU,474,Advanced Principles of Education,2,Undergraduate,EDU312,31,15,27
+187,EDU,376,Survey of Education,3,Undergraduate,,30,15,27
+188,EDU,346,Seminar in Education,3,Undergraduate,,27,13,24
+189,EDU,138,Principles of Education,3,Undergraduate,,45,22,40
+190,NURS,442,Advanced Survey of Nursing,2,Mixed,,36,18,32
+191,NURS,332,Survey of Nursing,3,Undergraduate,,57,28,51
+192,NURS,426,Advanced Survey of Nursing,2,Undergraduate,NURS112,59,29,53
+193,NURS,643,Advanced Survey of Nursing,4,Graduate,NURS164,60,30,54
+194,NURS,679,Advanced Survey of Nursing,3,Graduate,NURS146,22,11,19
+195,NURS,352,Introduction to Nursing,2,Undergraduate,,28,14,25
+196,NURS,289,Research Methods in Nursing,4,Undergraduate,,54,27,48
+197,NURS,480,Advanced Research Methods in Nursing,3,Undergraduate,,26,13,23
+198,NURS,657,Advanced Topics in Nursing,4,Graduate,NURS479,33,16,29
+199,NURS,220,Seminar in Nursing,3,Undergraduate,,43,21,38
+200,NURS,430,Advanced Survey of Nursing,2,Undergraduate,NURS162,49,24,44
